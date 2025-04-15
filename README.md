@@ -262,7 +262,7 @@ class Pessoa:
 ---
 
 ## 10. Exemplo Prático: Sistema de Biblioteca
-Veja um exemplo completo de um sistema de biblioteca em [BibliotecaOO.py](./Exemplos/BibliotecaOO.py), que demonstra:
+Veja um exemplo completo de um sistema de biblioteca em [biblioteca.py](./Exemplos/biblioteca.py), que demonstra:
 - Gerenciamento de livros e usuários
 - Empréstimo e devolução
 - Buscas e relatórios
