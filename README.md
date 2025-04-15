@@ -1,50 +1,80 @@
 # Estudos em Python
 
+Bem-vindo aos estudos em Python! Este material aborda desde conceitos fundamentais até aspectos mais avançados da linguagem. É ideal para iniciantes e também útil como referência rápida.
+
+---
+
+## ✅ Índice
+1. [Sintaxe em Python](#1-sintaxe-em-python)
+2. [Variáveis, Tipos de Dados e Operadores](#2-variáveis-tipos-de-dados-e-operadores)
+3. [Estruturas Condicionais](#3-estruturas-condicionais-if-elif-else)
+4. [Estruturas de Repetição](#4-estruturas-de-repetição-for-while)
+5. [Funções e Sub-rotinas](#5-introdução-a-funções-e-sub-rotinas)
+6. [Comentários e Documentação](#6-comentários-e-documentação-básica-de-código)
+7. [POO: Classes e Objetos](#7-definição-de-classes-e-objetos)
+8. [Encapsulamento](#8-encapsulamento)
+9. [Getter e Setter](#9-métodos-getter-e-setter)
+10. [Exemplo: Classe Calculadora](#10-criação-de-uma-classe-simples-e-manipulação-de-objetos)
+11. [Extras](#11-extras)
+    - [Listas, Tuplas e Dicionários](#listas-tuplas-e-dicionários)
+    - [Importação de Módulos](#importação-de-módulos)
+    - [Tratamento de Exceções](#tratamento-de-exceções)
+    - [List Comprehensions](#list-comprehensions)
+    - [Lambda e Funções Anônimas](#lambda-e-funções-anônimas)
+
+---
+
 ## 1. Sintaxe em Python
 Python é conhecido por sua sintaxe simples e legível. Vamos explorar alguns conceitos básicos:
 
-### Exemplo de "Hello, World!":
+### Exemplo: "Hello, World!"
 ```python
 print("Hello, World!")
 ```
-Este é o programa mais simples em Python, que imprime a mensagem "Hello, World!" na tela.
 
 ### Conceitos Importantes:
-- **Indentacão:**
-  A indentacão define a estrutura do código. Blocos como loops e condicionais devem ser consistentemente indentados.
-
+- **Indentação:** define blocos de código. É obrigatória!
 - **Comentários:**
-  - Linha única: `# Comentário`
-  - Múltiplas linhas:
+  - Linha única: `# Exemplo`
+  - Multilinhas:
     ```python
     '''
-    Comentário de
-    várias linhas
+    Comentário de múltiplas linhas
     '''
     ```
 
+---
+
 ## 2. Variáveis, Tipos de Dados e Operadores
 ```python
-x = 10           # Inteiro
-y = 3.14         # Float
-nome = "Alice"    # String
-ativo = True     # Booleano
+x = 10             # int
+pi = 3.14          # float
+nome = "Alice"      # str
+ativo = True       # bool
 ```
+
+### Operadores:
+- Aritméticos: `+`, `-`, `*`, `/`, `//`, `%`, `**`
+- Relacionais: `==`, `!=`, `<`, `>`, `<=`, `>=`
+- Lógicos: `and`, `or`, `not`
+
+---
 
 ## 3. Estruturas Condicionais (if, elif, else)
 ```python
-idade = 20  # int(input("Insira a sua idade: "))
+idade = 20
 
 if idade >= 18:
-    print("Você é maior de idade.")
-elif 12 < idade < 18:
-    print("Você é adolescente.")
+    print("Maior de idade")
+elif 13 <= idade < 18:
+    print("Adolescente")
 else:
-    print("Você é criança.")
+    print("Criança")
 ```
 
-## 4. Estruturas de Repetição (for, while)
+---
 
+## 4. Estruturas de Repetição (for, while)
 ### `for`
 ```python
 for i in range(5):
@@ -59,6 +89,8 @@ while contador < 5:
     contador += 1
 ```
 
+---
+
 ## 5. Introdução a Funções e Sub-rotinas
 ```python
 def saudacao(nome):
@@ -67,27 +99,29 @@ def saudacao(nome):
 saudacao("João")
 ```
 
-## 6. Comentários e Documentação Básica de Código
+---
 
-### 6.1 Comentários de Linha Única
+## 6. Comentários e Documentação Básica de Código
+### Comentário de Linha Única
 ```python
-# Esta função calcula a soma de dois números
+# Função que soma dois valores
 def soma(a, b):
     return a + b
 ```
 
-### 6.2 Docstrings
+### Docstrings
 ```python
 def soma(a, b):
     """
     Retorna a soma de dois números.
-
     Argumentos:
-    a -- o primeiro número
-    b -- o segundo número
+    - a: int ou float
+    - b: int ou float
     """
     return a + b
 ```
+
+---
 
 ## 7. Definição de Classes e Objetos
 ```python
@@ -103,43 +137,34 @@ class Carro:
     def frear(self):
         print(f"O {self.modelo} está freando.")
 
-# Criando um objeto da classe Carro
 meu_carro = Carro("Toyota", "Corolla", 2020)
-print(vars(meu_carro))
 meu_carro.acelerar()
 ```
 
-### 7.1 Instâncias, Atributos e Métodos
-- **Instância:** Objeto criado a partir de uma classe. Ex: `meu_carro`
-- **Atributos:** Variáveis da classe. Ex: `marca`, `modelo`, `ano`
-- **Métodos:** Funções dentro da classe. Ex: `acelerar`, `frear`
+### Conceitos:
+- **Instância:** objeto criado a partir de uma classe.
+- **Atributos:** propriedades (variáveis).
+- **Métodos:** comportamentos (funções).
+
+---
 
 ## 8. Encapsulamento
-
-### Atributo Público
+### Público
 ```python
-class Carro:
-    def __init__(self, marca):
-        self.marca = marca
+self.marca = marca
+```
+### Protegido
+```python
+self._marca = marca
+```
+### Privado
+```python
+self.__marca = marca
 ```
 
-### Atributo Protegido
-```python
-class Carro:
-    def __init__(self, marca):
-        self._marca = marca
-```
-
-### Atributo Privado
-```python
-class Carro:
-    def __init__(self, marca):
-        self.__marca = marca
-```
+---
 
 ## 9. Métodos Getter e Setter
-
-### Getter
 ```python
 class Carro:
     def __init__(self, marca):
@@ -147,20 +172,14 @@ class Carro:
 
     def get_marca(self):
         return self.__marca
+
+    def set_marca(self, nova_marca):
+        self.__marca = nova_marca
 ```
 
-### Setter
-```python
-class Carro:
-    def __init__(self, marca):
-        self.__marca = marca
-
-    def set_marca(self, marca):
-        self.__marca = marca
-```
+---
 
 ## 10. Criação de uma Classe Simples e Manipulação de Objetos
-### Exemplo: Classe Calculadora
 ```python
 class Calculadora:
     def __init__(self):
@@ -179,7 +198,7 @@ class Calculadora:
         if valor != 0:
             self._resultado /= valor
         else:
-            print("Erro: Divisão por zero não é permitida.")
+            print("Erro: divisão por zero.")
 
     def get_resultado(self):
         return self._resultado
@@ -187,4 +206,61 @@ class Calculadora:
     def reset(self):
         self._resultado = 0
 ```
+
+---
+
+## 11. Extras
+
+### Listas, Tuplas e Dicionários
+```python
+lista = [1, 2, 3]
+tupla = (1, 2, 3)
+dicionario = {"nome": "Alice", "idade": 30}
+```
+
+### Importação de Módulos
+```python
+import math
+print(math.sqrt(25))
+```
+
+### Tratamento de Exceções
+```python
+try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Divisão por zero!")
+```
+
+### List Comprehensions
+```python
+quadrados = [x**2 for x in range(5)]
+```
+
+### Lambda e Funções Anônimas
+```python
+quadrado = lambda x: x * x
+print(quadrado(5))
+```
+
+---
+
+## 📌 Dicas Finais
+- Use `help()` para consultar documentação no terminal.
+- Utilize `type()` para verificar o tipo de uma variável.
+- Organize o código em funções reutilizáveis.
+- Comente seu código! Isso ajuda você e outras pessoas no futuro.
+
+---
+
+Se quiser aprofundar ainda mais, recomendo estudar:
+- Manipulação de arquivos
+- Módulos externos (como `requests`, `pandas`, `flask`)
+- Testes unitários com `unittest` ou `pytest`
+- Programação assíncrona com `asyncio`
+- Estruturas avançadas de dados (filas, pilhas, árvores)
+
+---
+
+🚀 Continue praticando e explorando o mundo Python!
 
