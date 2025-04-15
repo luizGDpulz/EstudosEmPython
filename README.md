@@ -1,290 +1,332 @@
-# Estudos em Python
+# Estudos em Python 🐍
 
-Bem-vindo aos estudos em Python! Este material aborda desde conceitos fundamentais até aspectos mais avançados da linguagem. É ideal para iniciantes e também útil como referência rápida.
+Bem-vindo aos estudos em Python! Este material é um guia completo que aborda desde conceitos fundamentais até aspectos avançados da linguagem. É ideal para iniciantes e também serve como referência rápida para programadores experientes.
 
----
+## 📚 Exemplos Práticos
+Todos os exemplos de código mencionados neste guia podem ser encontrados na pasta [Exemplos](./Exemplos):
+- [basicos.py](./Exemplos/basicos.py) - Demonstrações de conceitos fundamentais
+- [biblioteca.py](./Exemplos/biblioteca.py) - Sistema completo de biblioteca demonstrando POO
+- [avancado.py](./Exemplos/avancado.py) - Conceitos avançados como decoradores, async/await, etc.
 
-## ✅ Índice
+## ✅ Índice Detalhado
 1. [Sintaxe em Python](#1-sintaxe-em-python)  
-2. [Variáveis, Tipos de Dados e Operadores](#2-variáveis-tipos-de-dados-e-operadores)  
-3. [Estruturas Condicionais (if, elif, else)](#3-estruturas-condicionais-if-elif-else)  
-4. [Estruturas de Repetição (for, while)](#4-estruturas-de-repetição-for-while)  
+2. [Variáveis e Tipos de Dados](#2-variáveis-tipos-de-dados-e-operadores)  
+3. [Estruturas Condicionais](#3-estruturas-condicionais-if-elif-else)  
+4. [Estruturas de Repetição](#4-estruturas-de-repetição-for-while)  
 5. [Funções e Sub-rotinas](#5-introdução-a-funções-e-sub-rotinas)  
 6. [Comentários e Documentação](#6-comentários-e-documentação-básica-de-código)  
 7. [POO: Classes e Objetos](#7-definição-de-classes-e-objetos)  
 8. [Encapsulamento](#8-encapsulamento)  
 9. [Getter e Setter](#9-métodos-getter-e-setter)  
-10. [Exemplo: Classe Calculadora](#10-criação-de-uma-classe-simples-e-manipulação-de-objetos)  
-11. [Extras](#11-extras) 
+10. [Exemplo Prático: Biblioteca](#10-criação-de-uma-classe-simples-e-manipulação-de-objetos)
+11. [Conceitos Avançados](#11-conceitos-avançados)
 
 ---
 
 ## 1. Sintaxe em Python
-Python é conhecido por sua sintaxe simples e legível. Vamos explorar alguns conceitos básicos:
+Python é famoso por sua sintaxe clara e legível. Vamos explorar suas características principais:
 
-### Exemplo de "Hello, World!":
+### 1.1 Indentação
+Python usa indentação para definir blocos de código. Isso não é apenas uma convenção de estilo, é uma regra da linguagem:
+
 ```python
-print("Hello, World!")
-```
-Este é o programa mais simples em Python, que imprime a mensagem "Hello, World!" na tela.
-
-- **Sem ponto e vírgula**: O Python não exige ponto e vírgula ao final das linhas.
-- **Indentação**: É obrigatória para definir blocos de código (como dentro de `if`, `for`, funções, etc.).
-
-### Indentação:
-```python
-if True:
-    print("Indentado corretamente")
+def funcao():
+    if True:
+        print("Indentado com 8 espaços")
+        for i in range(3):
+            print(f"Número {i}")
 ```
 
-### Comentários:
-- Linha única: `# comentário`
-- Multilinha:
+### 1.2 Comentários
 ```python
-'''
-Comentário de múltiplas linhas
-'''
+# Comentário de uma linha
+
+"""
+Comentário de
+múltiplas linhas (docstring)
+"""
 ```
+
+### 1.3 Convenções de Nomeação
+- Variáveis e funções: `snake_case` (nome_da_variavel)
+- Classes: `PascalCase` (NomeDaClasse)
+- Constantes: `SCREAMING_SNAKE_CASE` (NOME_DA_CONSTANTE)
+- Módulos: nomes curtos, em minúsculas
 
 ---
 
 ## 2. Variáveis, Tipos de Dados e Operadores
-```python
-x = 10        # Inteiro
-y = 3.14      # Float
-nome = "Alice"  # String
-ativo = True  # Booleano
-```
-Python detecta o tipo automaticamente. Você pode usar operadores matemáticos (+, -, *, /, %, //, **) e operadores lógicos (and, or, not).
 
-### Operações Matemáticas
+### 2.1 Tipos Básicos
 ```python
-soma = x + y
-potencia = x ** 2
-resto = x % 3
+# Números
+inteiro = 42
+flutuante = 3.14
+complexo = 3 + 4j
+
+# Strings
+texto = "Python"
+texto_multilinha = """
+Múltiplas
+linhas
+"""
+
+# Booleanos
+verdadeiro = True
+falso = False
+
+# None (null/nil em outras linguagens)
+nulo = None
 ```
 
-### Concatenação de strings
+### 2.2 Coleções
 ```python
-mensagem = "Olá, " + nome
-print(mensagem)
+# Listas (mutáveis)
+lista = [1, 2, 3, "python"]
+
+# Tuplas (imutáveis)
+tupla = (1, 2, "python")
+
+# Dicionários (chave-valor)
+dicionario = {
+    "nome": "Python",
+    "versao": 3.11
+}
+
+# Sets (conjuntos únicos)
+conjunto = {1, 2, 3}
 ```
+
+### 2.3 Operadores
+- Aritméticos: `+`, `-`, `*`, `/`, `//` (divisão inteira), `**` (potência), `%` (módulo)
+- Comparação: `==`, `!=`, `>`, `<`, `>=`, `<=`
+- Lógicos: `and`, `or`, `not`
+- Atribuição: `=`, `+=`, `-=`, `*=`, `/=`
+- Identidade: `is`, `is not`
+- Pertencimento: `in`, `not in`
 
 ---
 
-## 3. Estruturas Condicionais (if, elif, else)
+## 3. Estruturas Condicionais
+
+### 3.1 if/elif/else
 ```python
-idade = 20
-if idade >= 18:
-    print("Você é maior de idade.")
-elif idade > 12:
-    print("Você é adolescente.")
+idade = 18
+if idade < 13:
+    print("Criança")
+elif idade < 18:
+    print("Adolescente")
 else:
-    print("Você é criança.")
+    print("Adulto")
 ```
-Python usa `if`, `elif` e `else` sem parênteses, e os blocos são definidos por indentação.
+
+### 3.2 Operador Ternário
+```python
+status = "maior" if idade >= 18 else "menor"
+```
 
 ---
 
-## 4. Estruturas de Repetição (for, while)
-### `for`
+## 4. Estruturas de Repetição
+
+### 4.1 For Loop
 ```python
+# Iterando sobre uma sequência
 for i in range(5):
     print(i)
-```
-`range(5)` gera números de 0 a 4.
 
-### `while`
-```python
-contador = 0
-while contador < 5:
-    print(contador)
-    contador += 1
+# Iterando sobre uma lista
+for item in ["a", "b", "c"]:
+    print(item)
+
+# Enumerate para índice e valor
+for indice, valor in enumerate(["a", "b", "c"]):
+    print(f"{indice}: {valor}")
 ```
-O loop continua enquanto a condição for verdadeira.
+
+### 4.2 While Loop
+```python
+contador = 5
+while contador > 0:
+    print(contador)
+    contador -= 1
+```
+
+### 4.3 Controle de Loop
+- `break`: Sai do loop
+- `continue`: Pula para a próxima iteração
+- `else`: Executado quando o loop termina normalmente
 
 ---
 
 ## 5. Introdução a Funções e Sub-rotinas
+
+### 5.1 Definição Básica
 ```python
 def saudacao(nome):
-    print(f"Olá, {nome}!")
-
-saudacao("João")
+    return f"Olá, {nome}!"
 ```
-Funções são definidas com `def`. `f"{nome}"` é uma f-string, usada para interpolar variáveis.
+
+### 5.2 Parâmetros
+```python
+# Parâmetros default
+def saudacao(nome="Visitante"):
+    return f"Olá, {nome}!"
+
+# Args e Kwargs
+def funcao_flexivel(*args, **kwargs):
+    print(f"Args: {args}")
+    print(f"Kwargs: {kwargs}")
+```
+
+### 5.3 Type Hints (Python 3.5+)
+```python
+def soma(a: int, b: int) -> int:
+    return a + b
+```
 
 ---
 
-## 6. Comentários e Documentação Básica de Código
-### 6.1 Comentários de Linha Única
-```python
-# Esta função calcula a soma de dois números
-def soma(a, b):
-    return a + b
-```
+## 6. Comentários e Documentação
 
-### 6.2 Docstrings
+### 6.1 Docstrings
 ```python
-def soma(a, b):
+def calcular_media(numeros):
     """
-    Retorna a soma de dois números.
-
-    Argumentos:
-    a -- o primeiro número
-    b -- o segundo número
+    Calcula a média de uma sequência de números.
+    
+    Args:
+        numeros (list): Lista de números
+        
+    Returns:
+        float: Média dos números
     """
-    return a + b
+    return sum(numeros) / len(numeros)
 ```
-`Docstrings` são usados para documentar funções, classes e módulos.
 
 ---
 
 ## 7. Definição de Classes e Objetos
+
+### 7.1 Classe Básica
 ```python
-class Carro:
-    def __init__(self, marca, modelo, ano):
-        self.marca = marca
-        self.modelo = modelo
-        self.ano = ano
-
-    def acelerar(self):
-        print(f"O {self.modelo} está acelerando.")
-
-    def frear(self):
-        print(f"O {self.modelo} está freando.")
-
-meu_carro = Carro("Toyota", "Corolla", 2020)
-print(vars(meu_carro))
-meu_carro.acelerar()
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+    
+    def apresentar(self):
+        return f"Olá, sou {self.nome} e tenho {self.idade} anos"
 ```
-- `__init__` é o construtor.
-- `self` referencia o próprio objeto.
 
-### 7.1 Instâncias, Atributos e Métodos
-- **Instância**: `meu_carro` é uma instância da classe `Carro`.
-- **Atributos**: `marca`, `modelo`, `ano`.
-- **Métodos**: `acelerar`, `frear`.
+### 7.2 Herança
+```python
+class Funcionario(Pessoa):
+    def __init__(self, nome, idade, cargo):
+        super().__init__(nome, idade)
+        self.cargo = cargo
+```
 
 ---
 
 ## 8. Encapsulamento
-### Público
-```python
-class Carro:
-    def __init__(self, marca):
-        self.marca = marca
-```
+Python usa convenções de nomeação para indicar encapsulamento:
 
-### Protegido (convenção: _underscore)
 ```python
-class Carro:
-    def __init__(self, marca):
-        self._marca = marca
-```
-
-### Privado (convenção: __duplo underscore)
-```python
-class Carro:
-    def __init__(self, marca):
-        self.__marca = marca
+class Conta:
+    def __init__(self):
+        self.publico = "Acesso público"
+        self._protegido = "Acesso protegido"
+        self.__privado = "Acesso privado"
 ```
 
 ---
 
 ## 9. Métodos Getter e Setter
-### Getter
+
+### 9.1 Usando @property
 ```python
-class Carro:
-    def __init__(self, marca):
-        self.__marca = marca
-
-    def get_marca(self):
-        return self.__marca
-```
-
-### Setter
-```python
-class Carro:
-    def __init__(self, marca):
-        self.__marca = marca
-
-    def set_marca(self, marca):
-        self.__marca = marca
+class Pessoa:
+    def __init__(self, nome):
+        self._nome = nome
+    
+    @property
+    def nome(self):
+        return self._nome
+    
+    @nome.setter
+    def nome(self, valor):
+        self._nome = valor
 ```
 
 ---
 
-## 10. Criação de uma Classe Simples e Manipulação de Objetos
-```python
-class Calculadora:
-    def __init__(self):
-        self._resultado = 0
-
-    def somar(self, valor):
-        self._resultado += valor
-
-    def subtrair(self, valor):
-        self._resultado -= valor
-
-    def multiplicar(self, valor):
-        self._resultado *= valor
-
-    def dividir(self, valor):
-        if valor != 0:
-            self._resultado /= valor
-        else:
-            print("Erro: Divisão por zero não é permitida.")
-
-    def get_resultado(self):
-        return self._resultado
-
-    def reset(self):
-        self._resultado = 0
-```
+## 10. Exemplo Prático: Sistema de Biblioteca
+Veja um exemplo completo de um sistema de biblioteca em [BibliotecaOO.py](./Exemplos/BibliotecaOO.py), que demonstra:
+- Gerenciamento de livros e usuários
+- Empréstimo e devolução
+- Buscas e relatórios
+- Interface de linha de comando
 
 ---
 
-## 11. Extras
-### Conversão de tipos
+## 11. Conceitos Avançados
+
+### 11.1 Decoradores
 ```python
-numero_str = "123"
-numero_int = int(numero_str)
-print(numero_int + 10)
+def medir_tempo(func):
+    def wrapper(*args, **kwargs):
+        import time
+        inicio = time.time()
+        resultado = func(*args, **kwargs)
+        fim = time.time()
+        print(f"Tempo de execução: {fim - inicio}")
+        return resultado
+    return wrapper
+
+@medir_tempo
+def funcao_lenta():
+    # código aqui
+    pass
 ```
 
-### Listas
+### 11.2 Context Managers
 ```python
-frutas = ["maçã", "banana", "uva"]
-print(frutas[0])  # maçã
+class MeuContextManager:
+    def __enter__(self):
+        print("Entrando no contexto")
+        return self
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print("Saindo do contexto")
 ```
 
-### Dicionários
+### 11.3 Async/Await
 ```python
-pessoa = {"nome": "João", "idade": 30}
-print(pessoa["nome"])
+async def funcao_async():
+    await asyncio.sleep(1)
+    return "Resultado"
 ```
 
-### Laços com enumerate()
-```python
-for i, fruta in enumerate(frutas):
-    print(f"{i}: {fruta}")
-```
-
-### List comprehension
-```python
-quadrados = [x**2 for x in range(5)]
-print(quadrados)  # [0, 1, 4, 9, 16]
-```
-
-### Manipulação de arquivos
-```python
-with open("arquivo.txt", "w") as arquivo:
-    arquivo.write("Olá, mundo!")
-```
+Para mais exemplos avançados, consulte [avancado.py](./Exemplos/avancado.py).
 
 ---
 
-Pronto! Agora você tem uma base sólida de Python. Explore mais e pratique bastante!
+## 🚀 Próximos Passos
+1. Pratique com os exemplos fornecidos
+2. Explore a documentação oficial do Python
+3. Desenvolva seus próprios projetos
+4. Participe da comunidade Python
+
+---
+
+## 📚 Recursos Adicionais
+- [Documentação Oficial do Python](https://docs.python.org)
+- [PEP 8 - Guia de Estilo](https://pep8.org)
+- [Python Package Index (PyPI)](https://pypi.org)
+
+---
+
+Lembre-se: A prática é a chave para o aprendizado. Use os exemplos fornecidos como base para seus próprios experimentos!
 
 
