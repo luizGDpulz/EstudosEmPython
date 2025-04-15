@@ -5,17 +5,17 @@ Bem-vindo aos estudos em Python! Este material aborda desde conceitos fundamenta
 ---
 
 ## ✅ Índice
-1. Sintaxe em Python  
-2. Variáveis, Tipos de Dados e Operadores  
-3. Estruturas Condicionais (if, elif, else)  
-4. Estruturas de Repetição (for, while)  
-5. Funções e Sub-rotinas  
-6. Comentários e Documentação  
-7. POO: Classes e Objetos  
-8. Encapsulamento  
-9. Getter e Setter  
-10. Exemplo: Classe Calculadora  
-11. Extras  
+1. [Sintaxe em Python](#1-sintaxe-em-python)  
+2. [Variáveis, Tipos de Dados e Operadores](#2-variáveis-tipos-de-dados-e-operadores)  
+3. [Estruturas Condicionais (if, elif, else)](#3-estruturas-condicionais-if-elif-else)  
+4. [Estruturas de Repetição (for, while)](#4-estruturas-de-repetição-for-while)  
+5. [Funções e Sub-rotinas](#5-introdução-a-funções-e-sub-rotinas)  
+6. [Comentários e Documentação](#6-comentários-e-documentação-básica-de-código)  
+7. [POO: Classes e Objetos](#7-definição-de-classes-e-objetos)  
+8. [Encapsulamento](#8-encapsulamento)  
+9. [Getter e Setter](#9-métodos-getter-e-setter)  
+10. [Exemplo: Classe Calculadora](#10-criação-de-uma-classe-simples-e-manipulação-de-objetos)  
+11. [Extras](#11-extras) 
 
 ---
 
