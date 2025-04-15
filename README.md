@@ -287,3 +287,4 @@ with open("arquivo.txt", "w") as arquivo:
 
 Pronto! Agora você tem uma base sólida de Python. Explore mais e pratique bastante!
 
+
